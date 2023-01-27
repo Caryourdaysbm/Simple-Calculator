@@ -1,0 +1,104 @@
+.button-container{
+    width: 90%;
+}
+.colorBox{
+    width: 50px;
+    height: 50px;
+}
+.screen{
+    grid-area: input;
+    background-color: #645045;
+    padding: 20px;
+    color: white;
+    font-size: 40px;
+    font-family: "Courier New", Courier, monospace;
+    text-align: right;
+    padding: 20px 5px;
+}
+.symbol{
+    background-color: #f03829;
+    color: white;
+
+}
+.seven{
+    grid-area: seven;
+}
+.number{
+  
+    background-color: #d9d8da;
+    font-size: larger;
+    font-size: 3rem;
+    color: white;
+}
+
+.cl{
+    background-color: #5498a9;
+    margin: 0 auto;
+    display: grid;
+    width: 90%;
+margin-top: 6rem;
+    grid-template-areas: 'input input input input'
+    'clear clear backspace divide'
+    'seven eight nine multiply'
+    'four five six minus'
+    'one two three add'
+    'zero zero zero equal'
+    ;
+    gap: 0.2rem;
+    height: 80vh;
+}
+button{
+    border:solid #645045 1px ;
+    padding: 20px;
+    font-size: large;
+   
+    font-size: 3rem;
+}
+.backspace{
+    grid-area: backspace;
+}
+.clear{
+    grid-area: clear;
+}
+.divide{
+    grid-area: divide;
+}
+.eight{
+    grid-template-areas: eight;
+}
+.nine{
+    grid-area: nine;
+}
+.Multiply{
+grid-area: multiply;
+}
+.four{
+    grid-area:four ;
+}
+.five{
+    grid-area: five;
+}
+.six{
+    grid-area: six;
+}
+.Minus{
+    grid-area: minus;
+}
+.one{
+    grid-area: one;
+}
+.two{
+    grid-area: two;
+}
+.three{
+    grid-row: three;
+}
+.Add{
+    grid-row: add;
+}
+.zero{
+    grid-area: zero;
+}
+.equal{
+    grid-area: equal;
+}
