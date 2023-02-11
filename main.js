@@ -64,7 +64,7 @@ if (runningTotal === 0){
 }
 previousOperator = value;
    buffer='0';
-   console.log(runningTotal)
+
 }
 
 
