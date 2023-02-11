@@ -1,23 +1,3 @@
-/*const input = document.querySelector('.textInput')
-const box = document.querySelector('.box')
-const colorBox = document.querySelector('.colorBox')
-
-
-
-input.addEventListener('change', function(){
-    box.innerHTML= input.value;
-} );
-
-input.addEventListener('change', function(){
-    colorBox.style.backgroundColor = input.value;
-} );
-
-document
-.querySelector('.button-container')
-.addEventListener('click', function(event){
-alert(`you clicked button ${event.target.innerText}`)
-})*/
-
 let buffer= '0'
 let runningTotal = 0;
 let previousOperator;
