@@ -2,6 +2,8 @@ const input = document.querySelector('.textInput')
 const box = document.querySelector('.box')
 const colorBox = document.querySelector('.colorBox')
 
+
+
 input.addEventListener('change', function(){
     box.innerHTML= input.value;
 } );
@@ -17,6 +19,9 @@ alert(`you clicked button ${event.target.innerText}`)
 })
 
 let buffer= '0'
+let runningTotal = 0;
+let previousOperator;
+
 const screen = document.querySelector('.screen')
 function handleNumber(number){
    if (buffer=== '0'){
@@ -24,8 +29,9 @@ function handleNumber(number){
    }else{
     buffer+=number;
    }
-  
+
 }
+
 function handleSymbol(symbol){
   
     switch(symbol){
@@ -33,15 +39,25 @@ function handleSymbol(symbol){
         buffer = '0'
         break;
         case '=' :
-            console.log('equals')
+            if (previousOperator===null){
+                return
+            }
+            flushOperation(parseInt(buffer));
+            buffer="" + runningTotal
+            runningTotal = 0
             break;
             case '<' :
-                console.log('backspace')
+               if (buffer.length===1){
+                buffer='0'
+               }else{
+                buffer= buffer.substring(0, buffer.length-1);
+               }
                 break;
                 case '+':
                     case '-':
                         case '*':
                             case '/':
+                                handleMath(symbol)
     }
 }
 
@@ -55,6 +71,37 @@ handleSymbol(value)
   rerender();
 }
 
+function handleMath(value){ 
+if (buffer==='0'){
+    //do nothing
+    return;
+}
+const intBuffer = parseInt(buffer);
+if (runningTotal === 0){
+    runningTotal=intBuffer;
+} else{
+    flushOperation(intBuffer);
+}
+previousOperator = value;
+   buffer='0';
+   console.log(runningTotal)
+}
+
+
+
+function flushOperation(intBuffer){
+    if (previousOperator==='+'){
+        runningTotal+=intBuffer
+    } else if (previousOperator==='-'){
+        runningTotal-=intBuffer
+    } else if (previousOperator==='/'){
+        runningTotal/=intBuffer
+    } else if (previousOperator==='*'){
+        runningTotal*=intBuffer
+    }
+    }
+
+    
 function init (){
 
 document.querySelector('.cl')
